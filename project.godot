@@ -14,11 +14,6 @@ config/name="MUD"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-WebSocketClient="*res://addons/SimpleMultiplayer/websocket_client.gd"
-MultiplayerManager="*res://addons/SimpleMultiplayer/multiplayer_manager.tscn"
-
 [dotnet]
 
 project/assembly_name="MUD"
