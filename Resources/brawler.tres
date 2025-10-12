@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Class" load_steps=5 format=3 uid="uid://xqi8pb6greum"]
+
+[ext_resource type="Script" uid="uid://f11ddpxqtmls" path="res://Resources/Class.cs" id="1_hem3j"]
+[ext_resource type="Script" uid="uid://bj00kg20mk7ag" path="res://Resources/Stats.cs" id="1_lkot7"]
+[ext_resource type="Resource" uid="uid://ni2wkk6bcx8n" path="res://Resources/Buffs/WeaponSpecificBuff.tres" id="2_87w5v"]
+
+[sub_resource type="Resource" id="Resource_87w5v"]
+script = ExtResource("1_lkot7")
+Might = 10
+Endurance = 7
+Legerity = 3
+Cunning = 2
+metadata/_custom_type_script = "uid://bj00kg20mk7ag"
+
+[resource]
+script = ExtResource("1_hem3j")
+ClassName = "Brawler"
+Description = "You value brawn over brain. There's nothing in the world that can't be solved by punching it, and you live by that."
+BaseStats = SubResource("Resource_87w5v")
+StartingBuffs = Array[Object]([ExtResource("2_87w5v")])
+metadata/_custom_type_script = "uid://f11ddpxqtmls"

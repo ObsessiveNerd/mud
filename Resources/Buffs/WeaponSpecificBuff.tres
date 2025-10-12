@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WeaponSpecificBuff" load_steps=2 format=3 uid="uid://ni2wkk6bcx8n"]
+
+[ext_resource type="Script" uid="uid://cwtcc3y0gkefl" path="res://Resources/Buffs/WeaponSpecificBuff.cs" id="1_r4k86"]
+
+[resource]
+script = ExtResource("1_r4k86")
+metadata/_custom_type_script = "uid://cwtcc3y0gkefl"

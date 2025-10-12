@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://j200g4or3k1o"]
+
+[ext_resource type="Script" uid="uid://dw68pd3tvyjdb" path="res://Resources/Buffs/Buff.cs" id="1_kj8fk"]
+[ext_resource type="Resource" uid="uid://ni2wkk6bcx8n" path="res://Resources/Buffs/WeaponSpecificBuff.tres" id="2_aeu4d"]
+[ext_resource type="Script" uid="uid://bj00kg20mk7ag" path="res://Resources/Stats.cs" id="3_whupu"]
+[ext_resource type="Script" uid="uid://f11ddpxqtmls" path="res://Resources/Class.cs" id="4_vwyq2"]
+[ext_resource type="Script" uid="uid://cguaa13e1vwgj" path="res://Resources/Character.cs" id="5_7ccbp"]
+
+[sub_resource type="Resource" id="Resource_li2v0"]
+script = ExtResource("3_whupu")
+Might = 10
+Endurance = 7
+Legerity = 3
+Cunning = 2
+
+[sub_resource type="Resource" id="Resource_lnnyw"]
+script = ExtResource("4_vwyq2")
+ClassName = "Brawler"
+Description = "You value brawn over brain. There's nothing in the world that can't be solved by punching it, and you live by that."
+BaseStats = SubResource("Resource_li2v0")
+StartingBuffs = Array[ExtResource("1_kj8fk")]([ExtResource("2_aeu4d")])
+
+[sub_resource type="Resource" id="Resource_87w5v"]
+script = ExtResource("3_whupu")
+Might = 10
+Endurance = 7
+Legerity = 3
+Cunning = 2
+metadata/_custom_type_script = "uid://bj00kg20mk7ag"
+
+[resource]
+script = ExtResource("5_7ccbp")
+Name = "test2"
+CharacterClass = SubResource("Resource_lnnyw")
+Level = 1
+ExperienceToNextLevel = 10
+Stats = SubResource("Resource_87w5v")
+Buffs = Array[ExtResource("1_kj8fk")]([ExtResource("2_aeu4d")])

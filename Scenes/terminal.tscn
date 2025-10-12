@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx32mjr3o2b3a"]
+
+[ext_resource type="Script" uid="uid://bwjeatqkld6w" path="res://Scenes/Terminal.cs" id="1_0dftn"]
+[ext_resource type="Script" uid="uid://b4r7jhcui4hx5" path="res://Scenes/LineEditBehavior.cs" id="2_xws0m"]
+[ext_resource type="Script" uid="uid://dg6048ucmfq3i" path="res://Scenes/InputParser.cs" id="3_rwk22"]
+[ext_resource type="Script" uid="uid://bf37hcdtrljbb" path="res://Scripts/Factory.cs" id="4_1llhr"]
+[ext_resource type="Resource" uid="uid://xqi8pb6greum" path="res://Resources/brawler.tres" id="5_mc8ca"]
+[ext_resource type="Script" uid="uid://cmwuwhghfp32y" path="res://Scenes/NetworkManager.cs" id="6_0t7oi"]
+
+[node name="Terminal" type="Node2D" node_paths=PackedStringArray("terminalInput", "terminalOutput", "parser", "networkManager")]
+script = ExtResource("1_0dftn")
+terminalInput = NodePath("LineEdit")
+terminalOutput = NodePath("Console/Console Text")
+parser = NodePath("InputParser")
+networkManager = NodePath("NetworkManager")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 20.0
+offset_top = 604.0
+offset_right = 850.0
+offset_bottom = 635.0
+keep_editing_on_text_submit = true
+caret_blink = true
+script = ExtResource("2_xws0m")
+
+[node name="Console" type="Node" parent="."]
+
+[node name="Console Text" type="RichTextLabel" parent="Console"]
+z_index = 1
+offset_left = 35.0
+offset_top = 284.0
+offset_right = 839.0
+offset_bottom = 585.0
+bbcode_enabled = true
+text = "> [color=green]type help to see a list of commands[/color]"
+scroll_following = true
+autowrap_mode = 2
+vertical_alignment = 2
+
+[node name="BG" type="ColorRect" parent="Console"]
+offset_left = 20.0
+offset_top = 273.0
+offset_right = 851.0
+offset_bottom = 599.0
+mouse_filter = 2
+color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+
+[node name="Map" type="Node" parent="."]
+
+[node name="BG" type="ColorRect" parent="Map"]
+offset_left = 876.0
+offset_top = 273.0
+offset_right = 1132.0
+offset_bottom = 634.0
+mouse_filter = 2
+color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[node name="Character" type="Node" parent="."]
+
+[node name="BG" type="ColorRect" parent="Character"]
+offset_left = 876.0
+offset_top = 18.0
+offset_right = 1131.0
+offset_bottom = 264.0
+mouse_filter = 2
+color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="BG" type="ColorRect" parent="Graphics"]
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 852.0
+offset_bottom = 264.0
+mouse_filter = 2
+color = Color(0.20784314, 0.20784314, 0.20784314, 1)
+
+[node name="InputParser" type="Node" parent="."]
+script = ExtResource("3_rwk22")
+
+[node name="Factory" type="Node" parent="."]
+script = ExtResource("4_1llhr")
+classes = Array[Object]([ExtResource("5_mc8ca")])
+
+[node name="NetworkManager" type="Node" parent="."]
+script = ExtResource("6_0t7oi")
