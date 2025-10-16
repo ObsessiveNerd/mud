@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgcxpqjw4yybw"]
+
+[ext_resource type="Script" uid="uid://bdnp4pj4pdblm" path="res://addons/MapEditor/MapEditor.cs" id="1_3looq"]
+
+[node name="Map Editor" type="Control" node_paths=PackedStringArray("Graph", "NorthButton", "SouthButton", "EastButton", "WestButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3looq")
+Graph = NodePath("GraphEdit")
+NorthButton = NodePath("VBoxContainer/Add North")
+SouthButton = NodePath("VBoxContainer/Add South")
+EastButton = NodePath("VBoxContainer/Add East")
+WestButton = NodePath("VBoxContainer/Add West")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 0
+offset_right = 737.0
+offset_bottom = 645.0
+scroll_offset = Vector2(-737, -645)
+minimap_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 644.0
+
+[node name="Name" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Description" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Add North" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add North"
+
+[node name="Add South" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add South"
+
+[node name="Add East" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add East"
+
+[node name="Add West" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add West"

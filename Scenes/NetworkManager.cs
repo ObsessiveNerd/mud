@@ -77,7 +77,7 @@ public partial class NetworkManager : Node
         var f = FileAccess.Open(path, FileAccess.ModeFlags.Write);
         f.StoreBuffer(c);
         f.Close();
-
+        
         Character character = GD.Load<Character>(path);
         players[id] = character;
     }

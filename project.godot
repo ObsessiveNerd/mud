@@ -20,7 +20,7 @@ project/assembly_name="MUD"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/MapEditor/plugin.cfg")
 
 [input]
 
